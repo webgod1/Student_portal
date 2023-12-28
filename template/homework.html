@@ -1,0 +1,61 @@
+{%extends 'index.html'%}
+{%load static%}
+{%load crispy_forms_tags %}
+{%block content%}
+    <div class="container mt-3">
+        <table class="table table-striped table-border table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Tittle</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Due</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            {%for work in homework%}
+            <tbody>
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{work.subject}}</td>
+                    <td>{{work.title}}</td>
+                    <td>{{work.description}}</td>
+                    <td>{{work.due}}</td>
+                    <td>
+                        <a href="{%url 'up' work.id%}">
+                            <div class="form-check">
+                                {%if work.finished == True%}
+                                <input type="checkbox" class="form-check-input" checked id="1">
+                                
+                                {%else%}
+                                <input type="checkbox" class="form-check-input">
+                                <label for="flexCheckDefult" class="form-check-label">Mark as completed</label>
+                                
+                                {% endif %}
+                            </div>
+                        </a>
+                    </td>
+                    <td><a href="{%url 'del' work.id %}">delete</a></td>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+        <h4>All homework have been completed</h4>
+    </div>
+    <div class="container">
+        <form method="post">
+            {%csrf_token%}
+            <fieldset class="form-group ">
+                <legend class="border-bottom mb-4">Create Homework</legend>
+            </fieldset>
+            {{form|crispy}}
+            <div class="form-group">
+                <br>
+                <button type="submit" class="btn btn-success">Create homework</button>
+            </div>
+        </form>
+        
+    </div>
+{%endblock%}

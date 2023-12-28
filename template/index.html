@@ -1,0 +1,61 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student portal</title>
+    <link rel="stylesheet" href="{%static '/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{%static '/js/bootstrap.js'%}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                    <a href="/" class="navbar-brand">Student Portal</a>
+                    <button class="navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggler navigarion"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="" class="nav-link active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link ">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">options</a>
+                            </li>
+                            <div class='dropdown-menu' aria-label="navbarDropdown">
+                                <a href="" class="dropdown-item">Books</a>
+                                <a href="" class="dropdown-item">Books</a>
+                                <a href="" class="dropdown-item">Books</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="" class="dropdown-item">Books</a>
+                                <a href="" class="dropdown-item">Books</a>
+                                <a href="" class="dropdown-item">Books</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="" class="dropdown-item">Books</a>
+                                <a href="" class="dropdown-item">Books</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                            <li class="nav-item">
+                                <a href="" class="nav-link ">Log out</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link ">Log in</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="" class="nav-link ">register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        {%block content%}
+        {%endblock%}
+    </body>
+</html>
